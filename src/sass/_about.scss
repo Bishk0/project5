@@ -1,0 +1,146 @@
+.about {
+  padding: 100px 0;
+}
+
+.about__grey {
+  padding: 100px 0;
+  background: #fafafa;
+}
+
+.about__inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.about__block {
+  width: 33.33333%;
+  padding: 0 15px;
+  .about__img {
+    img {
+      max-width: 100%;
+      height: auto
+    }
+  }
+}
+
+.about__title {
+  margin-bottom: 15px;
+  margin-top: 50px;
+  span {
+    font-size: 30px;
+    font-weight: 700;
+    color: #515769;
+    line-height: 1.4;
+  }
+}
+
+.about__text {
+  margin-bottom: 15px;
+  padding-right: 20px;
+  span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #a6a7aa;
+  }
+}
+
+.about__block-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.about__img.fade-in-up {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  visibility: visible;
+  animation-delay: 0.3s;
+
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.about__grey-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .about__grey-box {
+    max-width: 487px;
+    width: 100%;
+    height: auto;
+    //border: 1px solid red;
+  }
+  .about__btn {
+    a {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 15px 40px;
+      color: #fff;
+      background: #515769;
+      display: inline-block;
+      line-height: 1.4;
+      text-transform: uppercase;
+      &:hover {
+        background: #17bed2;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+
+.accordion-item {
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  max-width: 457.5px;
+}
+.accordion-item-header {
+  background: #fff;
+  color: #515769;
+  background-color: #fff;
+  padding: 30px;
+  color: #515769;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  font-size: 22px;
+}
+.accordion-item-content {
+  transition: opacity .7s ease;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  font-size: 16px;
+  border-top: none;
+  padding: 0 30px 10px;
+  margin-top: -10px;
+  background: #17bed2;
+  color: #fff;
+  line-height: 1.4;
+}
+.accordion-item.show .accordion-item-content {
+  padding: 0 30px 10px;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+.accordion-item.show .accordion-item-header {
+  background: #17bed2;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}

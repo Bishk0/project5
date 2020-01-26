@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hind", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  //border: 1px solid red;
+}
+
+.fixed__navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  margin-bottom: 0;
+  top: 0;
+  //border: 1px solid red;
+  .fixed__navbar-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      width: 146px;
+      height: 28px;
+    }
+    nav {
+      min-height: 50px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .navbar {
+        ul {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          margin: 0;
+          li {
+            position: relative;
+            &:hover {
+              &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 45px;
+                width: 9px;
+                left: 0;
+                height: 2px;
+                background: #17bed2;
+                transition-duration: 4s;
+              }
+            }
+            a {
+              display: block;
+              font-size: 13px;
+              font-weight: bold;
+              text-transform: uppercase;
+              line-height: 55px;
+              padding: 20px;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed__navbar.is-active {
+  background: #fff;
+  border-bottom-color: #f0f0f0;
+  nav {
+    a {
+      color: #515769 !important;
+    }
+  }
+}
+.back-to-top.back-to-top-is-visible {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.back-to-top {
+  position: fixed;
+  transform: translate3d(0, 50px, 0);
+  transition-duration: 0.3s;
+  visibility: hidden;
+  right: 10px;
+  bottom: 10px;
+  display: inline-block;
+  z-index: 15;
+  width: 40px;
+  height: 40px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: 3;
+  letter-spacing: 1px;
+  background: #81848f;
+  border-radius: 3px;
+  padding: 5px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+  &:hover {
+    background: #515769;
+    transition: 0.4s;
+  }
+}
+
+.hamburger {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin: 35px 100px 35px 0;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger span {
+  width: 21px;
+  height: 1px;
+  bottom: 6px;
+  background-color: #515769;
+  display: block;
+  position: absolute;
+  left: 2px;
+}
+
+.hamburger span::before {
+  background-color: #515769;
+  position: absolute;
+  content: "";
+  top: -6px;
+  width: 16px;
+  height: 1px;
+  -webkit-transition: 0.3s ease;
+}
+
+.hamburger span::after {
+  background-color: #515769;
+  position: absolute;
+  content: "";
+  top: -12px;
+  width: 10px;
+  height: 1px;
+  -webkit-transition: 0.3s ease;
+}
+
+.hamburger:hover span,
+.hamburger:hover span::after,
+.hamburger:hover span::before {
+  background-color: #17bed2;
+}
+
+.hamburger:hover span::after,
+.hamburger:hover span::before {
+  width: 21px;
+  transition: 0.3s;
+}
+
+#modal {
+  max-width: 730px;
+  padding: 30px;
+  cursor: default;
+  h3 {
+    font-weight: 700;
+    color: #515769;
+    line-height: 1.4;
+    margin: 0;
+    font-size: 22px;
+  }
+  .modal__light-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #bfc1c7;
+  }
+}
+.modal__inner {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+
+.modal_block-text {
+  width: 61.64%;
+  padding-right: 15px;
+  border-right: 1px solid #a6a7aa;
+  .modal__text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #a6a7aa;
+    margin-bottom: 15px;
+  }
+  span {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #515769;
+    margin-right: 5px;
+    &:hover {
+      color: #999caa;
+    }
+  }
+}
+.modal_block {
+  padding-left: 15px;
+  padding-top: 15px;
+  .modal__bold-text {
+    font-weight: 700;
+    font-size: 15px;
+    color: #a6a7aa;
+  }
+  .modal__name {
+    font-size: 15px;
+    font-weight: 400;
+    color: #a6a7aa;
+  }
+}
+
+@import "header";
+@import "about";
+@import "products";
+@import "pricing";
+@import "work";
+@import "service";
+@import "contact";
+@import "footer";
+@import "media-query";
